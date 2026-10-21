@@ -11,16 +11,15 @@ from .defenses.redaction import redact
 from .index import Store
 from .rag import Defences, build_chain
 
-ALL = Defences(access_control=True, spotlight=True, rule_filter=True, output_filter=True)
+ALL = Defences(access_control=True, injection_filter=True, output_filter=True)
 # (key, label, use redacted index?, defences)
 CONFIGS = [
     ("C0", "No defence", False, Defences()),
-    ("D1", "Redaction before indexing (Presidio)", True, Defences()),
-    ("D2", "Retrieval-time access control", False, Defences(access_control=True)),
-    ("D3", "Output filter", False, Defences(output_filter=True)),
-    ("D4", "Spotlighting prompt", False, Defences(spotlight=True)),
-    ("D5", "Rule-based injection filter", False, Defences(rule_filter=True)),
-    ("ALL", "D1-D5 combined", True, ALL),
+    ("D1", "Presidio redaction at indexing", True, Defences()),
+    ("D2", "Document-level access control", False, Defences(access_control=True)),
+    ("D3", "Injection filter (rule-based)", False, Defences(injection_filter=True)),
+    ("D4", "Output filter", False, Defences(output_filter=True)),
+    ("ALL", "D1-D4 combined", True, ALL),
 ]
 CLEAN_MARKERS = ["attacker.example", "nw-verify.example", "hj-", "mx-", config.SYSTEM_CANARY.lower()]
 

@@ -1,12 +1,8 @@
-"""Defences against indirect prompt injection in retrieved text.
+"""Injection filter (defence D3) for indirect prompt injection in retrieved text.
 
-D4 "spotlighting" (Hines et al., 2024): each retrieved chunk is wrapped in
-   <document> tags and the system prompt says that text inside them is data, not
-   instructions. This is a prompt-only change, so it costs nothing at runtime.
-
-D5 rule-based chunk filter: a regex scanner flags retrieved chunks that look
-   like instructions aimed at an AI system; flagged chunks are dropped before
-   the prompt is built.
+A regex scanner flags retrieved chunks that look like instructions aimed at an
+AI system; flagged chunks are dropped before the prompt is built, so the model
+never sees them.
 
 Caveat, stated in the README: the same person wrote these rules and the attack
 suite. The rules target phrasings common in publicly documented prompt-

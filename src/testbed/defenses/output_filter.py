@@ -1,4 +1,4 @@
-"""Output filtering (defence D3): applied to the model's answer before the user sees it.
+"""Output filtering (defence D4): applied to the model's answer before the user sees it.
 
 Three independent checks:
   1. system-prompt leak: if the answer contains the secret deployment tag, the

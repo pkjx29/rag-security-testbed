@@ -3,7 +3,7 @@
 Used in two places:
   * index time: every document is redacted before it is embedded, so personal
     data never enters the vector store (defence D1);
-  * output time: the generated answer is redacted again (part of defence D3).
+  * output time: the generated answer is redacted again (part of defence D4).
 
 Presidio combines regex/checksum recognizers (e-mail, phone, SSN) with spaCy
 NER for names and dates. We use the small spaCy model (en_core_web_sm, 12 MB)
