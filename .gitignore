@@ -6,3 +6,5 @@ data/raw/
 data/index/
 data/cache/
 .DS_Store
+results/raw_outputs*.jsonl
+results/*_quick.*

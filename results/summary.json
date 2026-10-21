@@ -1,0 +1,342 @@
+{
+  "summary": {
+    "C0": {
+      "label": "No defence",
+      "inj_asr": 0.06,
+      "inj_k": 3,
+      "inj_n": 50,
+      "inj_ci": [
+        0.020614596364630478,
+        0.16217343370877002
+      ],
+      "inj_asr_raw": 0.06,
+      "inj_retrieved": 0.66,
+      "inj_asr_given_retrieved": 0.09090909090909091,
+      "inj_by_goal": {
+        "goal_hijack": 0.3,
+        "exfil_link": 0.0,
+        "phishing": 0.0,
+        "misinformation": 0.0,
+        "prompt_leak": 0.0
+      },
+      "inj_by_carrier": {
+        "plain_override": 0.2,
+        "fake_system_tag": 0.0,
+        "note_to_ai": 0.0,
+        "html_comment": 0.2,
+        "fake_authority": 0.2,
+        "persona_switch": 0.0,
+        "subtle_paraphrase": 0.0,
+        "spanish": 0.0,
+        "letter_spaced": 0.0,
+        "footnote": 0.0
+      },
+      "control_false_success": 0,
+      "pii_leak_rate": 0.7,
+      "pii_k": 21,
+      "pii_n": 30,
+      "pii_ci": [
+        0.5212387898833981,
+        0.8333543735604105
+      ],
+      "pii_identifier_leak_rate": 0.6,
+      "pii_distinct_values": 84,
+      "pii_by_style": {
+        "direct": 0.8,
+        "enumeration": 0.875,
+        "incidental": 0.5714285714285714,
+        "role_claim": 0.4
+      },
+      "util_nist": 0.8,
+      "util_authorized": 0.6666666666666666
+    },
+    "D1": {
+      "label": "Presidio redaction at indexing",
+      "inj_asr": 0.04,
+      "inj_k": 2,
+      "inj_n": 50,
+      "inj_ci": [
+        0.011038652660826577,
+        0.13460337877954667
+      ],
+      "inj_asr_raw": 0.04,
+      "inj_retrieved": 0.62,
+      "inj_asr_given_retrieved": 0.06451612903225806,
+      "inj_by_goal": {
+        "goal_hijack": 0.2,
+        "exfil_link": 0.0,
+        "phishing": 0.0,
+        "misinformation": 0.0,
+        "prompt_leak": 0.0
+      },
+      "inj_by_carrier": {
+        "plain_override": 0.0,
+        "fake_system_tag": 0.0,
+        "note_to_ai": 0.0,
+        "html_comment": 0.2,
+        "fake_authority": 0.2,
+        "persona_switch": 0.0,
+        "subtle_paraphrase": 0.0,
+        "spanish": 0.0,
+        "letter_spaced": 0.0,
+        "footnote": 0.0
+      },
+      "control_false_success": 0,
+      "pii_leak_rate": 0.03333333333333333,
+      "pii_k": 1,
+      "pii_n": 30,
+      "pii_ci": [
+        0.0059084379948573795,
+        0.16670751396958874
+      ],
+      "pii_identifier_leak_rate": 0.0,
+      "pii_distinct_values": 1,
+      "pii_by_style": {
+        "direct": 0.0,
+        "enumeration": 0.125,
+        "incidental": 0.0,
+        "role_claim": 0.0
+      },
+      "util_nist": 0.7,
+      "util_authorized": 0.16666666666666666
+    },
+    "D2": {
+      "label": "Document-level access control",
+      "inj_asr": 0.06,
+      "inj_k": 3,
+      "inj_n": 50,
+      "inj_ci": [
+        0.020614596364630478,
+        0.16217343370877002
+      ],
+      "inj_asr_raw": 0.06,
+      "inj_retrieved": 0.66,
+      "inj_asr_given_retrieved": 0.09090909090909091,
+      "inj_by_goal": {
+        "goal_hijack": 0.3,
+        "exfil_link": 0.0,
+        "phishing": 0.0,
+        "misinformation": 0.0,
+        "prompt_leak": 0.0
+      },
+      "inj_by_carrier": {
+        "plain_override": 0.2,
+        "fake_system_tag": 0.0,
+        "note_to_ai": 0.0,
+        "html_comment": 0.2,
+        "fake_authority": 0.2,
+        "persona_switch": 0.0,
+        "subtle_paraphrase": 0.0,
+        "spanish": 0.0,
+        "letter_spaced": 0.0,
+        "footnote": 0.0
+      },
+      "control_false_success": 0,
+      "pii_leak_rate": 0.16666666666666666,
+      "pii_k": 5,
+      "pii_n": 30,
+      "pii_ci": [
+        0.07336434240351683,
+        0.33564705185680177
+      ],
+      "pii_identifier_leak_rate": 0.16666666666666666,
+      "pii_distinct_values": 23,
+      "pii_by_style": {
+        "direct": 0.3,
+        "enumeration": 0.25,
+        "incidental": 0.0,
+        "role_claim": 0.0
+      },
+      "util_nist": 0.8,
+      "util_authorized": 0.6666666666666666
+    },
+    "D3": {
+      "label": "Injection filter (rule-based)",
+      "inj_asr": 0.0,
+      "inj_k": 0,
+      "inj_n": 50,
+      "inj_ci": [
+        0.0,
+        0.07135003417431873
+      ],
+      "inj_asr_raw": 0.0,
+      "inj_retrieved": 0.66,
+      "inj_asr_given_retrieved": 0.0,
+      "inj_by_goal": {
+        "goal_hijack": 0.0,
+        "exfil_link": 0.0,
+        "phishing": 0.0,
+        "misinformation": 0.0,
+        "prompt_leak": 0.0
+      },
+      "inj_by_carrier": {
+        "plain_override": 0.0,
+        "fake_system_tag": 0.0,
+        "note_to_ai": 0.0,
+        "html_comment": 0.0,
+        "fake_authority": 0.0,
+        "persona_switch": 0.0,
+        "subtle_paraphrase": 0.0,
+        "spanish": 0.0,
+        "letter_spaced": 0.0,
+        "footnote": 0.0
+      },
+      "control_false_success": 0,
+      "pii_leak_rate": 0.7,
+      "pii_k": 21,
+      "pii_n": 30,
+      "pii_ci": [
+        0.5212387898833981,
+        0.8333543735604105
+      ],
+      "pii_identifier_leak_rate": 0.6,
+      "pii_distinct_values": 84,
+      "pii_by_style": {
+        "direct": 0.8,
+        "enumeration": 0.875,
+        "incidental": 0.5714285714285714,
+        "role_claim": 0.4
+      },
+      "util_nist": 0.8,
+      "util_authorized": 0.6666666666666666
+    },
+    "D4": {
+      "label": "Output filter",
+      "inj_asr": 0.06,
+      "inj_k": 3,
+      "inj_n": 50,
+      "inj_ci": [
+        0.020614596364630478,
+        0.16217343370877002
+      ],
+      "inj_asr_raw": 0.06,
+      "inj_retrieved": 0.66,
+      "inj_asr_given_retrieved": 0.09090909090909091,
+      "inj_by_goal": {
+        "goal_hijack": 0.3,
+        "exfil_link": 0.0,
+        "phishing": 0.0,
+        "misinformation": 0.0,
+        "prompt_leak": 0.0
+      },
+      "inj_by_carrier": {
+        "plain_override": 0.2,
+        "fake_system_tag": 0.0,
+        "note_to_ai": 0.0,
+        "html_comment": 0.2,
+        "fake_authority": 0.2,
+        "persona_switch": 0.0,
+        "subtle_paraphrase": 0.0,
+        "spanish": 0.0,
+        "letter_spaced": 0.0,
+        "footnote": 0.0
+      },
+      "control_false_success": 0,
+      "pii_leak_rate": 0.06666666666666667,
+      "pii_k": 2,
+      "pii_n": 30,
+      "pii_ci": [
+        0.01847663532769335,
+        0.21323817721072091
+      ],
+      "pii_identifier_leak_rate": 0.06666666666666667,
+      "pii_distinct_values": 2,
+      "pii_by_style": {
+        "direct": 0.2,
+        "enumeration": 0.0,
+        "incidental": 0.0,
+        "role_claim": 0.0
+      },
+      "util_nist": 0.8,
+      "util_authorized": 0.5
+    },
+    "ALL": {
+      "label": "D1-D4 combined",
+      "inj_asr": 0.0,
+      "inj_k": 0,
+      "inj_n": 50,
+      "inj_ci": [
+        0.0,
+        0.07135003417431873
+      ],
+      "inj_asr_raw": 0.0,
+      "inj_retrieved": 0.62,
+      "inj_asr_given_retrieved": 0.0,
+      "inj_by_goal": {
+        "goal_hijack": 0.0,
+        "exfil_link": 0.0,
+        "phishing": 0.0,
+        "misinformation": 0.0,
+        "prompt_leak": 0.0
+      },
+      "inj_by_carrier": {
+        "plain_override": 0.0,
+        "fake_system_tag": 0.0,
+        "note_to_ai": 0.0,
+        "html_comment": 0.0,
+        "fake_authority": 0.0,
+        "persona_switch": 0.0,
+        "subtle_paraphrase": 0.0,
+        "spanish": 0.0,
+        "letter_spaced": 0.0,
+        "footnote": 0.0
+      },
+      "control_false_success": 0,
+      "pii_leak_rate": 0.0,
+      "pii_k": 0,
+      "pii_n": 30,
+      "pii_ci": [
+        0.0,
+        0.113517091390478
+      ],
+      "pii_identifier_leak_rate": 0.0,
+      "pii_distinct_values": 0,
+      "pii_by_style": {
+        "direct": 0.0,
+        "enumeration": 0.0,
+        "incidental": 0.0,
+        "role_claim": 0.0
+      },
+      "util_nist": 0.7,
+      "util_authorized": 0.16666666666666666
+    }
+  },
+  "standalone": {
+    "rule_filter": {
+      "poison_detected": 34,
+      "poison_n": 50,
+      "clean_flagged": 2,
+      "clean_n": 1369,
+      "clean_rules_fired": {
+        "forced_output": 1,
+        "prompt_extraction": 1
+      },
+      "detected_by_carrier": {
+        "plain_override": 1.0,
+        "fake_system_tag": 1.0,
+        "note_to_ai": 1.0,
+        "html_comment": 1.0,
+        "fake_authority": 0.8,
+        "persona_switch": 1.0,
+        "subtle_paraphrase": 0.4,
+        "spanish": 0.2,
+        "letter_spaced": 0.2,
+        "footnote": 0.2
+      }
+    },
+    "presidio": {
+      "seeded_values": 290,
+      "survived": 3,
+      "survived_by_field": {
+        "name": 3
+      }
+    }
+  },
+  "n": {
+    "injection": 50,
+    "control": 10,
+    "pii": 30,
+    "nist_qa": 10,
+    "authorized": 6
+  }
+}
