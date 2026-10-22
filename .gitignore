@@ -1,10 +1,19 @@
+# environments and caches
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-data/raw/
-data/index/
-data/cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.env
 .DS_Store
-results/raw_outputs*.jsonl
-results/*_quick.*
+# downloaded and generated data (rebuilt by `make ingest`)
+data/raw/
+data/processed/
+storage/*
+!storage/.gitkeep
+# run artefacts: only results/latest/ is published
+results/*
+!results/.gitkeep
+!results/latest/
