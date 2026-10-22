@@ -87,7 +87,7 @@ def test_chroma_store_persists_upserts_idempotently_and_filters(tmp_path):
 def test_protected_store_contains_redacted_text(tmp_path):
     from rag_copilot.retrieval.store import Store
     paths = Paths(data=tmp_path / "d", storage=tmp_path / "s", results=tmp_path / "r")
-    s = Store(paths, RetrievalConfig(collection_plain="p2", collection_redacted="r2"), redacted=True)
+    s = Store(paths, RetrievalConfig(collection_plain="plain2", collection_redacted="redacted2"), redacted=True)
     s.upsert([RESTRICTED])
     text = s.get(RESTRICTED.chunk_id).text
     assert "912-34-5678" not in text and "MRN-1234567" not in text and "<US_SSN>" in text

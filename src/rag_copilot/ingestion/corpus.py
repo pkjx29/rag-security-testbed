@@ -11,7 +11,7 @@ import hashlib
 import json
 import re
 import urllib.request
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -91,7 +91,7 @@ def write_manifest(paths: Paths, hashes: dict[str, str], chunks: list[Chunk]) ->
         key = str(c.metadata["doc_id"])
         counts[key] = counts.get(key, 0) + 1
     manifest = {
-        "ingested_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "ingested_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "documents": [{**d.model_dump(), "actual_sha256": hashes.get(d.doc_id),
                        "chunks": counts.get(d.doc_id, 0)} for d in CORPUS],
     }

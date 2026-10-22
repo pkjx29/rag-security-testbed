@@ -52,7 +52,8 @@ def redact_with_stats(text: str) -> tuple[str, Counter]:
     _, anonymizer = _engines()
     results = detect(text)
     operators = {e: OperatorConfig("replace", {"new_value": f"<{e}>"}) for e in ENTITIES}
-    redacted = anonymizer.anonymize(text=text, analyzer_results=results, operators=operators).text
+    redacted = anonymizer.anonymize(text=text, analyzer_results=results,  # type: ignore[arg-type]
+                                    operators=operators).text
     return redacted, Counter(r.entity_type for r in results)
 
 

@@ -8,10 +8,11 @@ import secrets
 import subprocess
 import time
 from collections.abc import Callable
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from importlib import metadata
+from typing import Any
 
-from ..config import EXPERIMENTS, SEED, ROOT, DefenceConfig
+from ..config import EXPERIMENTS, ROOT, SEED, DefenceConfig
 from ..pipeline.rag import RAGPipeline
 from ..retrieval.store import PLANTED_KIND
 from ..schemas import Chunk, Principal, QueryRequest
@@ -101,7 +102,8 @@ def static_checks(pipe: RAGPipeline, truth: list[dict]) -> dict:
     """Checks that need no LLM: is the protected index really redacted, and how often
     does the injection filter fire on the clean corpus?"""
     protected = pipe.stores[True]
-    survived, total, by_field = 0, 0, {}
+    survived, total = 0, 0
+    by_field: dict[str, int] = {}
     for t in truth:
         chunk = protected.get(t["doc"])  # type: ignore[attr-defined]
         text = chunk.text.lower() if chunk else ""
@@ -129,11 +131,11 @@ def static_checks(pipe: RAGPipeline, truth: list[dict]) -> dict:
 def run(pipe: RAGPipeline, cases: list[dict], dataset_version: str, truth: list[dict],
         experiments: list[str] | None = None, quick: bool = False,
         progress: Callable[[str], None] = print) -> dict:
-    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + secrets.token_hex(3)
+    run_id = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ") + "-" + secrets.token_hex(3)
     s = pipe.settings
     record_docs = {t["doc"] for t in truth if t["doc"].startswith("record-")}
-    meta = {
-        "run_id": run_id, "started_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    meta: dict[str, Any] = {
+        "run_id": run_id, "started_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "git_commit": _git_commit(), "model_id": pipe.llm.model_id,
         "model": s.model.model_dump(), "retrieval": s.retrieval.model_dump(), "packages": _versions(),
         "dataset_version": dataset_version, "seed": SEED, "quick": quick, "status": "running",
@@ -159,7 +161,7 @@ def run(pipe: RAGPipeline, cases: list[dict], dataset_version: str, truth: list[
                  f"PII leak {m['pii_leak']['k']}/{m['pii_leak']['n']}, "
                  f"QA {m['utility_benign_qa']['k']}/{m['utility_benign_qa']['n']}, "
                  f"errors {m['errors']} ({time.time() - t0:.0f}s)")
-    meta.update({"finished_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    meta.update({"finished_at": datetime.now(UTC).isoformat(timespec="seconds"),
                  "status": "complete" if len(summary) == len(keys) else "incomplete",
                  "n_cases": len(cases), "experiments": keys})
     return {"meta": meta, "summary": summary, "static": static_checks(pipe, truth), "rows": rows}

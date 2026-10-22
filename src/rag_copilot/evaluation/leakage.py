@@ -22,7 +22,7 @@ IDENTIFIER_FIELDS = ("email", "phone", "ssn", "dob", "mrn")   # i.e. everything 
 def build_queries(truth: list[dict]) -> list[dict]:
     patients = [t for t in truth if "mrn" in t]
     staff = [t for t in truth if "mrn" not in t]
-    q = []
+    q: list[dict] = []
 
     def add(style, text):
         q.append({"qid": f"pii-{len(q):02d}", "style": style, "question": text})

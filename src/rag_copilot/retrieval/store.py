@@ -85,7 +85,7 @@ class Store:
             return []
         res = self.col.query(query_texts=[question], n_results=k or self.cfg.top_k, where=where)
         return [Chunk(chunk_id=i, text=t, metadata=m)  # type: ignore[arg-type]
-                for i, t, m in zip(res["ids"][0], res["documents"][0], res["metadatas"][0])]  # type: ignore[index]
+                for i, t, m in zip(res["ids"][0], res["documents"][0], res["metadatas"][0], strict=True)]  # type: ignore[index]
 
     # --- evaluation harness ---------------------------------------------
     def plant(self, chunk: Chunk) -> None:

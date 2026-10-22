@@ -26,7 +26,7 @@ def fmt(m: dict | None) -> str:
     if m is None:
         return "n/a"
     if m["rate"] is None:
-        return f"undefined (0/0)"
+        return "undefined (0/0)"
     lo, hi = m["ci95"]
     return f"{m['k']}/{m['n']} ({100 * m['rate']:.0f}%, {100 * lo:.0f}–{100 * hi:.0f})"
 

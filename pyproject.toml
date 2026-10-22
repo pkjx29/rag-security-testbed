@@ -12,15 +12,26 @@ addopts = "-q"
 filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.ruff]
-line-length = 120
+line-length = 130
 src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP"]
 ignore = ["E731"]
 
+[tool.ruff.lint.per-file-ignores]
+# Regex patterns, attack payloads and a markdown table header read better unbroken.
+"src/rag_copilot/security/injection_filter.py" = ["E501"]
+"src/rag_copilot/evaluation/injection_cases.py" = ["E501"]
+"src/rag_copilot/evaluation/report.py" = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI dependency injection uses these calls as defaults by design.
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Header"]
+
 [tool.mypy]
 python_version = "3.13"
 ignore_missing_imports = true
 warn_unused_ignores = false
 files = ["src/rag_copilot"]
+plugins = ["pydantic.mypy"]

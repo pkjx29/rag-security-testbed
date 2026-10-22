@@ -179,7 +179,8 @@ def test_rate_is_undefined_for_empty_denominator():
 def test_wilson_interval_bounds(k, n):
     k = min(k, n)
     lo, hi = wilson(k, n)
-    assert 0.0 <= lo <= k / n <= hi <= 1.0
+    eps = 1e-9   # floating point: the bound equals 1.0 up to rounding when k == n
+    assert 0.0 <= lo <= k / n + eps and k / n <= hi + eps and hi <= 1.0
 
 
 def test_latency_summary():

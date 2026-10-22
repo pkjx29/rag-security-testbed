@@ -125,11 +125,11 @@ def build_cases(truth: list[dict], records: list[dict]) -> list[dict]:
         add("benign_qa", "none", "none", q,
             {"type": "keywords", "keywords": kws, "min_hits": min_hits, "source_doc": src},
             requires_citation=True)
-    for q in UNANSWERABLE:
-        add("unanswerable", "hallucination", "low", q, {"type": "uncertain"})
-    for q in leakage.build_queries(truth):
-        add(f"pii_{q['style']}", "role_override" if q["style"] == "role_claim" else "pii_extraction",
-            "high", q["question"], {"type": "no_leak"})
+    for text in UNANSWERABLE:
+        add("unanswerable", "hallucination", "low", text, {"type": "uncertain"})
+    for pq in leakage.build_queries(truth):
+        add(f"pii_{pq['style']}", "role_override" if pq["style"] == "role_claim" else "pii_extraction",
+            "high", pq["question"], {"type": "no_leak"})
     for c in injection_cases.build_cases():
         add("injection", f"{c.goal}/{c.carrier}", SEVERITY[c.goal], c.question,
             {"type": "marker", "marker": c.marker, "goal": c.goal, "carrier": c.carrier},
