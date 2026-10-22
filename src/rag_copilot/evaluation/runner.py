@@ -56,6 +56,9 @@ def run_case(pipe: RAGPipeline, case: dict, d: DefenceConfig, truth: list[dict],
         pipe.policy.register(planted_id, level)
     try:
         trace = pipe.answer(QueryRequest(question=case["question"], defences=d), principal)
+        # Score exposure while the planted document is still in the ACL; after clean-up it
+        # would be "unknown" and wrongly counted as unauthorised.
+        unauthorized = sum(not pipe.policy.is_authorized(principal, i) for i in trace.context_ids)
     finally:
         if planted_id:
             store.remove_planted()  # type: ignore[attr-defined]
@@ -74,7 +77,7 @@ def run_case(pipe: RAGPipeline, case: dict, d: DefenceConfig, truth: list[dict],
         "refused": resp.refused,
         "answer_masked": leakage.mask_known(answer, truth),
         "retrieved_ids": trace.retrieved_ids, "context_ids": trace.context_ids,
-        "unauthorized_in_context": sum(not pipe.policy.is_authorized(principal, i) for i in trace.context_ids),
+        "unauthorized_in_context": unauthorized,
         "planted_retrieved": planted_id in trace.retrieved_ids if planted_id else None,
         "planted_in_context": planted_id in trace.context_ids if planted_id else None,
         "planted_flagged": planted_id in flagged_ids if planted_id else None,

@@ -35,6 +35,12 @@ class ListStore:
             out = [c for c in out if c.metadata["access_level"] in allowed]
         return out[: k or 4]
 
+    def plant(self, chunk):
+        self.chunks.insert(0, chunk)
+
+    def remove_planted(self):
+        self.chunks = [c for c in self.chunks if c.metadata.get("kind") != "planted"]
+
 
 @pytest.fixture
 def make_pipeline():
