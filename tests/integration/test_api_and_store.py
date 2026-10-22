@@ -91,3 +91,8 @@ def test_protected_store_contains_redacted_text(tmp_path):
     s.upsert([RESTRICTED])
     text = s.get(RESTRICTED.chunk_id).text
     assert "912-34-5678" not in text and "MRN-1234567" not in text and "<US_SSN>" in text
+
+
+def test_ingest_endpoint_needs_admin(client):
+    c, _ = client
+    assert c.post("/admin/ingest", headers={"X-API-Key": "dev-public-key"}).status_code == 403

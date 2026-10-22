@@ -149,6 +149,28 @@ def create_app(settings: Settings | None = None,
     def evaluation_status(_: Principal = Depends(admin)) -> dict:
         return {"status": state["eval_status"]}
 
+    @app.post("/admin/ingest", status_code=202)
+    def start_ingest(rebuild: bool = False, _: Principal = Depends(admin)) -> dict:
+        """Download/verify the NIST PDFs, regenerate the synthetic records and (re)build both indexes.
+        Shares the evaluation lock: the index must not change under a running benchmark."""
+        if not state["eval_lock"].acquire(blocking=False):
+            raise HTTPException(409, "an evaluation or ingestion is already running")
+
+        def work() -> None:
+            from ..pipeline.setup import ingest
+            try:
+                state["eval_status"] = "ingesting"
+                stats = ingest(settings, rebuild=rebuild)
+                state["pipeline"] = None             # reload stores and ACL on next query
+                state["eval_status"] = f"ingested {stats['nist_chunks']} NIST + {stats['synthetic_chunks']} synthetic chunks"
+            except Exception as exc:
+                state["eval_status"] = f"ingest failed: {type(exc).__name__}"
+            finally:
+                state["eval_lock"].release()
+
+        threading.Thread(target=work, daemon=True).start()
+        return {"status": "started"}
+
     @app.get("/evaluation/runs")
     def list_runs(_: Principal = Depends(principal)) -> list[dict]:
         runs_dir = settings.paths.results / "runs"

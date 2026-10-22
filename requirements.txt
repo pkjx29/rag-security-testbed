@@ -1,6 +1,7 @@
-# Direct dependencies, pinned to the versions the committed results were produced with.
-mlx==0.32.4
-mlx-lm==0.32.2
+# Direct dependencies, pinned to the versions the published results were produced with.
+# Full transitive lock: requirements.lock (pip freeze from the same environment).
+mlx==0.32.4 ; sys_platform == "darwin" and platform_machine == "arm64"
+mlx-lm==0.32.2 ; sys_platform == "darwin" and platform_machine == "arm64"
 chromadb==1.5.9
 onnxruntime==1.31.0
 langchain-core==1.6.12
@@ -11,4 +12,14 @@ spacy==3.8.16
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85
 Faker==40.43.0
 pypdf==6.21.1
+pydantic==2.14.1
+fastapi==0.158.0
+uvicorn==0.54.0
+httpx==0.28.1
+streamlit==1.66.1
+pandas==3.0.6
+# development
 pytest==9.1.1
+hypothesis==6.170.5
+ruff==0.17.1
+mypy==2.4.0

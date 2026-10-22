@@ -1,0 +1,30 @@
+# Draft, not yet verified (see docs/deployment.md). Ports are bound to localhost only.
+services:
+  api:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]
+    env_file: [.env]
+    environment:
+      RAG_BACKEND: openai_compatible
+      RAG_MODEL_SERVER_URL: http://host.docker.internal:8080/v1
+    volumes:
+      - ./data/raw:/app/data/raw
+      - ./data/processed:/app/data/processed
+      - ./storage:/app/storage
+      - ./results:/app/results
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    deploy:
+      resources:
+        limits: {cpus: "2", memory: 3g}
+  ui:
+    build: .
+    command: ["streamlit", "run", "ui/app.py", "--server.address", "0.0.0.0", "--server.port", "8501"]
+    ports: ["127.0.0.1:8501:8501"]
+    environment:
+      RAG_API_URL: http://api:8000
+    volumes:
+      - ./results:/app/results:ro
+    depends_on: [api]
+    deploy:
+      resources:
+        limits: {cpus: "1", memory: 1g}

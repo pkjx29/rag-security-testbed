@@ -35,3 +35,4 @@ ignore_missing_imports = true
 warn_unused_ignores = false
 files = ["src/rag_copilot"]
 plugins = ["pydantic.mypy"]
+cache_dir = "/dev/null"   # the cache is ~100 MB; disk is tight on the dev machine
