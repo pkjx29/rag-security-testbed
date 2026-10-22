@@ -1,0 +1,49 @@
+{
+  "run_id": "20261022T075136Z-164d61",
+  "started_at": "2026-10-22T07:51:36+00:00",
+  "git_commit": "a7c050e9055fb6ebc432c1f372570fd91e8c498c-dirty",
+  "model_id": "mlx-community/Qwen2.5-1.5B-Instruct-4bit",
+  "model": {
+    "backend": "mlx",
+    "model_id": "mlx-community/Qwen2.5-1.5B-Instruct-4bit",
+    "server_url": "http://127.0.0.1:8080/v1",
+    "max_tokens": 200,
+    "temperature": 0.0,
+    "timeout_s": 60.0
+  },
+  "retrieval": {
+    "chunk_size": 900,
+    "chunk_overlap": 150,
+    "top_k": 4,
+    "embedding_model": "chromadb-default/all-MiniLM-L6-v2-onnx",
+    "collection_plain": "nist_plain",
+    "collection_redacted": "nist_redacted"
+  },
+  "packages": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.32.2",
+    "chromadb": "1.5.9",
+    "onnxruntime": "1.31.0",
+    "langchain-core": "1.6.12",
+    "langchain-text-splitters": "1.1.3",
+    "presidio-analyzer": "2.2.364",
+    "presidio-anonymizer": "2.2.364",
+    "spacy": "3.8.16",
+    "pypdf": "6.21.1",
+    "faker": "40.43.0"
+  },
+  "dataset_version": "b227bf9532de60e0a53cb9b30c067e94acb71d5a87fd664412a84e75090590ed",
+  "seed": 1337,
+  "quick": false,
+  "status": "complete",
+  "finished_at": "2026-10-22T07:54:02+00:00",
+  "n_cases": 115,
+  "experiments": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ]
+}

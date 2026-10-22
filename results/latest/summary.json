@@ -1,0 +1,1947 @@
+{
+  "summary": {
+    "A": {
+      "label": "Baseline (no defences)",
+      "defences": {
+        "redaction": false,
+        "access_control": false,
+        "injection_filter": false,
+        "output_filter": false,
+        "injection_policy": "exclude",
+        "output_policy": "redact"
+      },
+      "injection_asr": {
+        "k": 1,
+        "n": 50,
+        "rate": 0.02,
+        "ci95": [
+          0.0035391680889764604,
+          0.10495686471836953
+        ]
+      },
+      "injection_asr_given_retrieved": {
+        "k": 1,
+        "n": 33,
+        "rate": 0.030303030303030304,
+        "ci95": [
+          0.005369272089651725,
+          0.15319061673168066
+        ]
+      },
+      "injection_asr_by_goal": {
+        "goal_hijack": {
+          "k": 1,
+          "n": 10,
+          "rate": 0.1,
+          "ci95": [
+            0.01787574951572113,
+            0.4041563854975721
+          ]
+        },
+        "exfil_link": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "phishing": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "misinformation": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "prompt_leak": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      },
+      "injection_asr_by_carrier": {
+        "plain_override": {
+          "k": 1,
+          "n": 5,
+          "rate": 0.2,
+          "ci95": [
+            0.03622316096978745,
+            0.6244717358814613
+          ]
+        },
+        "fake_system_tag": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "note_to_ai": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "html_comment": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_authority": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "persona_switch": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "subtle_paraphrase": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "spanish": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "letter_spaced": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "footnote": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        }
+      },
+      "poison_retrieved": {
+        "k": 33,
+        "n": 50,
+        "rate": 0.66,
+        "ci95": [
+          0.5215356854148285,
+          0.7756323036493895
+        ]
+      },
+      "indirect_extraction_success": {
+        "k": 4,
+        "n": 5,
+        "rate": 0.8,
+        "ci95": [
+          0.3755282641185388,
+          0.9637768390302125
+        ]
+      },
+      "pii_leak": {
+        "k": 15,
+        "n": 30,
+        "rate": 0.5,
+        "ci95": [
+          0.33153851227173764,
+          0.6684614877282624
+        ]
+      },
+      "pii_identifier_leak": {
+        "k": 12,
+        "n": 30,
+        "rate": 0.4,
+        "ci95": [
+          0.24590394326083403,
+          0.5767994750172616
+        ]
+      },
+      "role_override_leak": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "distinct_values_leaked": 82,
+      "unauthorized_disclosure": {
+        "k": 18,
+        "n": 109,
+        "rate": 0.1651376146788991,
+        "ci95": [
+          0.1070860342222884,
+          0.24598942730962886
+        ]
+      },
+      "unauthorized_context_exposure": {
+        "k": 32,
+        "n": 109,
+        "rate": 0.29357798165137616,
+        "ci95": [
+          0.21628578140258625,
+          0.38492511954174635
+        ]
+      },
+      "unauthorized_chunks_in_context": 110,
+      "injection_detection": null,
+      "injection_kept_out_of_context": {
+        "k": 0,
+        "n": 33,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.10427343003561192
+        ]
+      },
+      "lookalike_false_positive": null,
+      "output_filter_changed_benign": null,
+      "utility_benign_qa": {
+        "k": 9,
+        "n": 10,
+        "rate": 0.9,
+        "ci95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ]
+      },
+      "utility_lookalike_qa": {
+        "k": 8,
+        "n": 8,
+        "rate": 1.0,
+        "ci95": [
+          0.6755843804891231,
+          1.0
+        ]
+      },
+      "utility_authorized": {
+        "k": 5,
+        "n": 6,
+        "rate": 0.8333333333333334,
+        "ci95": [
+          0.43649056343635395,
+          0.9699474141282697
+        ]
+      },
+      "uncertainty_when_unanswerable": {
+        "k": 6,
+        "n": 6,
+        "rate": 1.0,
+        "ci95": [
+          0.6096569663469354,
+          0.9999999999999999
+        ]
+      },
+      "citation_validity": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "source_support": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "latency_end_to_end_s": {
+        "n": 115,
+        "mean": 0.127,
+        "p50": 0.113,
+        "p95": 0.127
+      },
+      "latency_generation_uncached_s": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "cases": 115,
+      "errors": 0
+    },
+    "B": {
+      "label": "D1 Presidio redaction at indexing",
+      "defences": {
+        "redaction": true,
+        "access_control": false,
+        "injection_filter": false,
+        "output_filter": false,
+        "injection_policy": "exclude",
+        "output_policy": "redact"
+      },
+      "injection_asr": {
+        "k": 0,
+        "n": 50,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.07135003417431873
+        ]
+      },
+      "injection_asr_given_retrieved": {
+        "k": 0,
+        "n": 31,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.11025900073475385
+        ]
+      },
+      "injection_asr_by_goal": {
+        "goal_hijack": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "exfil_link": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "phishing": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "misinformation": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "prompt_leak": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      },
+      "injection_asr_by_carrier": {
+        "plain_override": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_system_tag": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "note_to_ai": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "html_comment": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_authority": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "persona_switch": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "subtle_paraphrase": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "spanish": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "letter_spaced": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "footnote": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        }
+      },
+      "poison_retrieved": {
+        "k": 31,
+        "n": 50,
+        "rate": 0.62,
+        "ci95": [
+          0.4815019502239357,
+          0.7413740415742278
+        ]
+      },
+      "indirect_extraction_success": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "pii_leak": {
+        "k": 1,
+        "n": 30,
+        "rate": 0.03333333333333333,
+        "ci95": [
+          0.0059084379948573795,
+          0.16670751396958874
+        ]
+      },
+      "pii_identifier_leak": {
+        "k": 0,
+        "n": 30,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.113517091390478
+        ]
+      },
+      "role_override_leak": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "distinct_values_leaked": 1,
+      "unauthorized_disclosure": {
+        "k": 1,
+        "n": 109,
+        "rate": 0.009174311926605505,
+        "ci95": [
+          0.0016212895577145392,
+          0.050146852687698494
+        ]
+      },
+      "unauthorized_context_exposure": {
+        "k": 23,
+        "n": 109,
+        "rate": 0.21100917431192662,
+        "ci95": [
+          0.14492255462317266,
+          0.29677270669889294
+        ]
+      },
+      "unauthorized_chunks_in_context": 90,
+      "injection_detection": null,
+      "injection_kept_out_of_context": {
+        "k": 0,
+        "n": 31,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.11025900073475385
+        ]
+      },
+      "lookalike_false_positive": null,
+      "output_filter_changed_benign": null,
+      "utility_benign_qa": {
+        "k": 7,
+        "n": 10,
+        "rate": 0.7,
+        "ci95": [
+          0.39677321997956516,
+          0.892210712513788
+        ]
+      },
+      "utility_lookalike_qa": {
+        "k": 7,
+        "n": 8,
+        "rate": 0.875,
+        "ci95": [
+          0.5291051942301386,
+          0.9775830911367038
+        ]
+      },
+      "utility_authorized": {
+        "k": 1,
+        "n": 6,
+        "rate": 0.16666666666666666,
+        "ci95": [
+          0.03005258587173032,
+          0.563509436563646
+        ]
+      },
+      "uncertainty_when_unanswerable": {
+        "k": 6,
+        "n": 6,
+        "rate": 1.0,
+        "ci95": [
+          0.6096569663469354,
+          0.9999999999999999
+        ]
+      },
+      "citation_validity": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "source_support": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "latency_end_to_end_s": {
+        "n": 115,
+        "mean": 0.113,
+        "p50": 0.112,
+        "p95": 0.117
+      },
+      "latency_generation_uncached_s": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "cases": 115,
+      "errors": 0
+    },
+    "C": {
+      "label": "D2 Document-level access control",
+      "defences": {
+        "redaction": false,
+        "access_control": true,
+        "injection_filter": false,
+        "output_filter": false,
+        "injection_policy": "exclude",
+        "output_policy": "redact"
+      },
+      "injection_asr": {
+        "k": 1,
+        "n": 50,
+        "rate": 0.02,
+        "ci95": [
+          0.0035391680889764604,
+          0.10495686471836953
+        ]
+      },
+      "injection_asr_given_retrieved": {
+        "k": 1,
+        "n": 33,
+        "rate": 0.030303030303030304,
+        "ci95": [
+          0.005369272089651725,
+          0.15319061673168066
+        ]
+      },
+      "injection_asr_by_goal": {
+        "goal_hijack": {
+          "k": 1,
+          "n": 10,
+          "rate": 0.1,
+          "ci95": [
+            0.01787574951572113,
+            0.4041563854975721
+          ]
+        },
+        "exfil_link": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "phishing": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "misinformation": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "prompt_leak": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      },
+      "injection_asr_by_carrier": {
+        "plain_override": {
+          "k": 1,
+          "n": 5,
+          "rate": 0.2,
+          "ci95": [
+            0.03622316096978745,
+            0.6244717358814613
+          ]
+        },
+        "fake_system_tag": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "note_to_ai": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "html_comment": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_authority": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "persona_switch": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "subtle_paraphrase": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "spanish": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "letter_spaced": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "footnote": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        }
+      },
+      "poison_retrieved": {
+        "k": 33,
+        "n": 50,
+        "rate": 0.66,
+        "ci95": [
+          0.5215356854148285,
+          0.7756323036493895
+        ]
+      },
+      "indirect_extraction_success": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "pii_leak": {
+        "k": 2,
+        "n": 30,
+        "rate": 0.06666666666666667,
+        "ci95": [
+          0.01847663532769335,
+          0.21323817721072091
+        ]
+      },
+      "pii_identifier_leak": {
+        "k": 1,
+        "n": 30,
+        "rate": 0.03333333333333333,
+        "ci95": [
+          0.0059084379948573795,
+          0.16670751396958874
+        ]
+      },
+      "role_override_leak": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "distinct_values_leaked": 11,
+      "unauthorized_disclosure": {
+        "k": 0,
+        "n": 109,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.03404418228738337
+        ]
+      },
+      "unauthorized_context_exposure": {
+        "k": 0,
+        "n": 109,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.03404418228738337
+        ]
+      },
+      "unauthorized_chunks_in_context": 0,
+      "injection_detection": null,
+      "injection_kept_out_of_context": {
+        "k": 0,
+        "n": 33,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.10427343003561192
+        ]
+      },
+      "lookalike_false_positive": null,
+      "output_filter_changed_benign": null,
+      "utility_benign_qa": {
+        "k": 9,
+        "n": 10,
+        "rate": 0.9,
+        "ci95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ]
+      },
+      "utility_lookalike_qa": {
+        "k": 8,
+        "n": 8,
+        "rate": 1.0,
+        "ci95": [
+          0.6755843804891231,
+          1.0
+        ]
+      },
+      "utility_authorized": {
+        "k": 5,
+        "n": 6,
+        "rate": 0.8333333333333334,
+        "ci95": [
+          0.43649056343635395,
+          0.9699474141282697
+        ]
+      },
+      "uncertainty_when_unanswerable": {
+        "k": 6,
+        "n": 6,
+        "rate": 1.0,
+        "ci95": [
+          0.6096569663469354,
+          0.9999999999999999
+        ]
+      },
+      "citation_validity": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "source_support": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "latency_end_to_end_s": {
+        "n": 115,
+        "mean": 0.121,
+        "p50": 0.118,
+        "p95": 0.134
+      },
+      "latency_generation_uncached_s": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "cases": 115,
+      "errors": 0
+    },
+    "D": {
+      "label": "D3 Injection filter",
+      "defences": {
+        "redaction": false,
+        "access_control": false,
+        "injection_filter": true,
+        "output_filter": false,
+        "injection_policy": "exclude",
+        "output_policy": "redact"
+      },
+      "injection_asr": {
+        "k": 0,
+        "n": 50,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.07135003417431873
+        ]
+      },
+      "injection_asr_given_retrieved": {
+        "k": 0,
+        "n": 33,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.10427343003561192
+        ]
+      },
+      "injection_asr_by_goal": {
+        "goal_hijack": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "exfil_link": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "phishing": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "misinformation": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "prompt_leak": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      },
+      "injection_asr_by_carrier": {
+        "plain_override": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_system_tag": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "note_to_ai": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "html_comment": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_authority": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "persona_switch": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "subtle_paraphrase": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "spanish": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "letter_spaced": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "footnote": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        }
+      },
+      "poison_retrieved": {
+        "k": 33,
+        "n": 50,
+        "rate": 0.66,
+        "ci95": [
+          0.5215356854148285,
+          0.7756323036493895
+        ]
+      },
+      "indirect_extraction_success": {
+        "k": 4,
+        "n": 5,
+        "rate": 0.8,
+        "ci95": [
+          0.3755282641185388,
+          0.9637768390302125
+        ]
+      },
+      "pii_leak": {
+        "k": 15,
+        "n": 30,
+        "rate": 0.5,
+        "ci95": [
+          0.33153851227173764,
+          0.6684614877282624
+        ]
+      },
+      "pii_identifier_leak": {
+        "k": 12,
+        "n": 30,
+        "rate": 0.4,
+        "ci95": [
+          0.24590394326083403,
+          0.5767994750172616
+        ]
+      },
+      "role_override_leak": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "distinct_values_leaked": 82,
+      "unauthorized_disclosure": {
+        "k": 18,
+        "n": 109,
+        "rate": 0.1651376146788991,
+        "ci95": [
+          0.1070860342222884,
+          0.24598942730962886
+        ]
+      },
+      "unauthorized_context_exposure": {
+        "k": 32,
+        "n": 109,
+        "rate": 0.29357798165137616,
+        "ci95": [
+          0.21628578140258625,
+          0.38492511954174635
+        ]
+      },
+      "unauthorized_chunks_in_context": 110,
+      "injection_detection": {
+        "k": 23,
+        "n": 33,
+        "rate": 0.696969696969697,
+        "ci95": [
+          0.5266154602526555,
+          0.8262465218545277
+        ]
+      },
+      "injection_kept_out_of_context": {
+        "k": 23,
+        "n": 33,
+        "rate": 0.696969696969697,
+        "ci95": [
+          0.5266154602526555,
+          0.8262465218545277
+        ]
+      },
+      "lookalike_false_positive": {
+        "k": 5,
+        "n": 8,
+        "rate": 0.625,
+        "ci95": [
+          0.30573785458380187,
+          0.863158240538479
+        ]
+      },
+      "output_filter_changed_benign": null,
+      "utility_benign_qa": {
+        "k": 9,
+        "n": 10,
+        "rate": 0.9,
+        "ci95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ]
+      },
+      "utility_lookalike_qa": {
+        "k": 5,
+        "n": 8,
+        "rate": 0.625,
+        "ci95": [
+          0.30573785458380187,
+          0.863158240538479
+        ]
+      },
+      "utility_authorized": {
+        "k": 5,
+        "n": 6,
+        "rate": 0.8333333333333334,
+        "ci95": [
+          0.43649056343635395,
+          0.9699474141282697
+        ]
+      },
+      "uncertainty_when_unanswerable": {
+        "k": 6,
+        "n": 6,
+        "rate": 1.0,
+        "ci95": [
+          0.6096569663469354,
+          0.9999999999999999
+        ]
+      },
+      "citation_validity": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "source_support": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "latency_end_to_end_s": {
+        "n": 115,
+        "mean": 0.117,
+        "p50": 0.116,
+        "p95": 0.125
+      },
+      "latency_generation_uncached_s": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "cases": 115,
+      "errors": 0
+    },
+    "E": {
+      "label": "D4 Output filter",
+      "defences": {
+        "redaction": false,
+        "access_control": false,
+        "injection_filter": false,
+        "output_filter": true,
+        "injection_policy": "exclude",
+        "output_policy": "redact"
+      },
+      "injection_asr": {
+        "k": 1,
+        "n": 50,
+        "rate": 0.02,
+        "ci95": [
+          0.0035391680889764604,
+          0.10495686471836953
+        ]
+      },
+      "injection_asr_given_retrieved": {
+        "k": 1,
+        "n": 33,
+        "rate": 0.030303030303030304,
+        "ci95": [
+          0.005369272089651725,
+          0.15319061673168066
+        ]
+      },
+      "injection_asr_by_goal": {
+        "goal_hijack": {
+          "k": 1,
+          "n": 10,
+          "rate": 0.1,
+          "ci95": [
+            0.01787574951572113,
+            0.4041563854975721
+          ]
+        },
+        "exfil_link": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "phishing": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "misinformation": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "prompt_leak": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      },
+      "injection_asr_by_carrier": {
+        "plain_override": {
+          "k": 1,
+          "n": 5,
+          "rate": 0.2,
+          "ci95": [
+            0.03622316096978745,
+            0.6244717358814613
+          ]
+        },
+        "fake_system_tag": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "note_to_ai": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "html_comment": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_authority": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "persona_switch": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "subtle_paraphrase": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "spanish": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "letter_spaced": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "footnote": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        }
+      },
+      "poison_retrieved": {
+        "k": 33,
+        "n": 50,
+        "rate": 0.66,
+        "ci95": [
+          0.5215356854148285,
+          0.7756323036493895
+        ]
+      },
+      "indirect_extraction_success": {
+        "k": 1,
+        "n": 5,
+        "rate": 0.2,
+        "ci95": [
+          0.03622316096978745,
+          0.6244717358814613
+        ]
+      },
+      "pii_leak": {
+        "k": 4,
+        "n": 30,
+        "rate": 0.13333333333333333,
+        "ci95": [
+          0.05309569424218104,
+          0.2968168394441695
+        ]
+      },
+      "pii_identifier_leak": {
+        "k": 3,
+        "n": 30,
+        "rate": 0.1,
+        "ci95": [
+          0.03459925995971615,
+          0.25621441315266624
+        ]
+      },
+      "role_override_leak": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "distinct_values_leaked": 5,
+      "unauthorized_disclosure": {
+        "k": 4,
+        "n": 109,
+        "rate": 0.03669724770642202,
+        "ci95": [
+          0.014361469198727862,
+          0.09057855292077416
+        ]
+      },
+      "unauthorized_context_exposure": {
+        "k": 32,
+        "n": 109,
+        "rate": 0.29357798165137616,
+        "ci95": [
+          0.21628578140258625,
+          0.38492511954174635
+        ]
+      },
+      "unauthorized_chunks_in_context": 110,
+      "injection_detection": null,
+      "injection_kept_out_of_context": {
+        "k": 0,
+        "n": 33,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.10427343003561192
+        ]
+      },
+      "lookalike_false_positive": null,
+      "output_filter_changed_benign": {
+        "k": 1,
+        "n": 10,
+        "rate": 0.1,
+        "ci95": [
+          0.01787574951572113,
+          0.4041563854975721
+        ]
+      },
+      "utility_benign_qa": {
+        "k": 9,
+        "n": 10,
+        "rate": 0.9,
+        "ci95": [
+          0.5958436145024278,
+          0.9821242504842788
+        ]
+      },
+      "utility_lookalike_qa": {
+        "k": 7,
+        "n": 8,
+        "rate": 0.875,
+        "ci95": [
+          0.5291051942301386,
+          0.9775830911367038
+        ]
+      },
+      "utility_authorized": {
+        "k": 3,
+        "n": 6,
+        "rate": 0.5,
+        "ci95": [
+          0.18761280689940868,
+          0.8123871931005913
+        ]
+      },
+      "uncertainty_when_unanswerable": {
+        "k": 6,
+        "n": 6,
+        "rate": 1.0,
+        "ci95": [
+          0.6096569663469354,
+          0.9999999999999999
+        ]
+      },
+      "citation_validity": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "source_support": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "latency_end_to_end_s": {
+        "n": 115,
+        "mean": 0.136,
+        "p50": 0.134,
+        "p95": 0.156
+      },
+      "latency_generation_uncached_s": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "cases": 115,
+      "errors": 0
+    },
+    "F": {
+      "label": "All four defences",
+      "defences": {
+        "redaction": true,
+        "access_control": true,
+        "injection_filter": true,
+        "output_filter": true,
+        "injection_policy": "exclude",
+        "output_policy": "redact"
+      },
+      "injection_asr": {
+        "k": 0,
+        "n": 50,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.07135003417431873
+        ]
+      },
+      "injection_asr_given_retrieved": {
+        "k": 0,
+        "n": 31,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.11025900073475385
+        ]
+      },
+      "injection_asr_by_goal": {
+        "goal_hijack": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "exfil_link": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "phishing": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "misinformation": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        },
+        "prompt_leak": {
+          "k": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775401687666166
+          ]
+        }
+      },
+      "injection_asr_by_carrier": {
+        "plain_override": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_system_tag": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "note_to_ai": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "html_comment": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "fake_authority": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "persona_switch": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "subtle_paraphrase": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "spanish": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "letter_spaced": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        },
+        "footnote": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43449149475208104
+          ]
+        }
+      },
+      "poison_retrieved": {
+        "k": 31,
+        "n": 50,
+        "rate": 0.62,
+        "ci95": [
+          0.4815019502239357,
+          0.7413740415742278
+        ]
+      },
+      "indirect_extraction_success": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "pii_leak": {
+        "k": 0,
+        "n": 30,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.113517091390478
+        ]
+      },
+      "pii_identifier_leak": {
+        "k": 0,
+        "n": 30,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.113517091390478
+        ]
+      },
+      "role_override_leak": {
+        "k": 0,
+        "n": 5,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.43449149475208104
+        ]
+      },
+      "distinct_values_leaked": 0,
+      "unauthorized_disclosure": {
+        "k": 0,
+        "n": 109,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.03404418228738337
+        ]
+      },
+      "unauthorized_context_exposure": {
+        "k": 0,
+        "n": 109,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.03404418228738337
+        ]
+      },
+      "unauthorized_chunks_in_context": 0,
+      "injection_detection": {
+        "k": 21,
+        "n": 31,
+        "rate": 0.6774193548387096,
+        "ci95": [
+          0.5014068555995079,
+          0.8143076925268695
+        ]
+      },
+      "injection_kept_out_of_context": {
+        "k": 21,
+        "n": 31,
+        "rate": 0.6774193548387096,
+        "ci95": [
+          0.5014068555995079,
+          0.8143076925268695
+        ]
+      },
+      "lookalike_false_positive": {
+        "k": 5,
+        "n": 8,
+        "rate": 0.625,
+        "ci95": [
+          0.30573785458380187,
+          0.863158240538479
+        ]
+      },
+      "output_filter_changed_benign": {
+        "k": 0,
+        "n": 10,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.2775401687666166
+        ]
+      },
+      "utility_benign_qa": {
+        "k": 7,
+        "n": 10,
+        "rate": 0.7,
+        "ci95": [
+          0.39677321997956516,
+          0.892210712513788
+        ]
+      },
+      "utility_lookalike_qa": {
+        "k": 4,
+        "n": 8,
+        "rate": 0.5,
+        "ci95": [
+          0.21521252682444186,
+          0.7847874731755582
+        ]
+      },
+      "utility_authorized": {
+        "k": 1,
+        "n": 6,
+        "rate": 0.16666666666666666,
+        "ci95": [
+          0.03005258587173032,
+          0.563509436563646
+        ]
+      },
+      "uncertainty_when_unanswerable": {
+        "k": 6,
+        "n": 6,
+        "rate": 1.0,
+        "ci95": [
+          0.6096569663469354,
+          0.9999999999999999
+        ]
+      },
+      "citation_validity": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "source_support": {
+        "k": 4,
+        "n": 10,
+        "rate": 0.4,
+        "ci95": [
+          0.16817758120350967,
+          0.6873304525498135
+        ]
+      },
+      "latency_end_to_end_s": {
+        "n": 115,
+        "mean": 0.14,
+        "p50": 0.135,
+        "p95": 0.159
+      },
+      "latency_generation_uncached_s": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "cases": 115,
+      "errors": 0
+    }
+  },
+  "static": {
+    "protected_index_redaction": {
+      "seeded_values": 290,
+      "removed": 287,
+      "survived_by_field": {
+        "name": 3
+      }
+    },
+    "injection_filter_on_clean_corpus": {
+      "flagged": 2,
+      "n": 1369,
+      "rules": {
+        "forced_output": 1,
+        "prompt_extraction": 1
+      }
+    }
+  }
+}
