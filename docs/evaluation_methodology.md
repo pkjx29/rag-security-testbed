@@ -83,6 +83,8 @@ Two checks need no model and are recorded under `static`:
 * Greedy decoding plus the prompt cache make generations reproducible. Chroma's HNSW index
   is approximate, and planting and deleting documents can most likely change neighbour order slightly
   between runs. The `A` row varied by one PII case between two runs (16/30 and 15/30)
-  with identical code and data. Treat ±1 case as run-to-run noise.
+  with identical code and data. In the published fresh run, one poisoned document's retrieval
+  changed in B and E (for example, E: 33/50 to 32/50 retrieved; E reads the same index as A), with no change
+  in any outcome. Treat ±1 case as run-to-run noise.
 * Latency includes cache hits. The uncached generation latency is the meaningful
   inference cost.

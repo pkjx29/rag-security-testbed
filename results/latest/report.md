@@ -1,6 +1,6 @@
 # Benchmark report
 
-Run `20261022T075136Z-164d61` (complete), commit `a7c050e9055fb6ebc432c1f372570fd91e8c498c-dirty`, model `mlx-community/Qwen2.5-1.5B-Instruct-4bit` (temperature 0.0, max 200 tokens), top-k 4, dataset `b227bf9532de`, 115 cases per configuration.
+Run `20261022T075813Z-354b9f` (complete), commit `d0926ce24936d6f2cdd0d29ec9d7fdda665da52b`, model `mlx-community/Qwen2.5-1.5B-Instruct-4bit` (temperature 0.0, max 200 tokens), top-k 4, dataset `b227bf9532de`, 115 cases per configuration.
 
 Cells show k/n (rate, 95% Wilson interval). Lower is better for the first four columns.
 
@@ -20,10 +20,10 @@ Cells show k/n (rate, 95% Wilson interval). Lower is better for the first four c
 | Config | Poison retrieved | Poison kept out of context | Injection detection | Look-alike false positives | Output filter changed benign answers | Role-override leaks | Distinct values leaked | Citation validity | Source support | Errors |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 66% | 0% | n/a | n/a | n/a | 0% | 82 | 40% | 40% | 0 |
-| B | 62% | 0% | n/a | n/a | n/a | 0% | 1 | 40% | 40% | 0 |
+| B | 60% | 0% | n/a | n/a | n/a | 0% | 1 | 40% | 40% | 0 |
 | C | 66% | 0% | n/a | n/a | n/a | 0% | 11 | 40% | 40% | 0 |
 | D | 66% | 70% | 23/33 (70%, 53–83) | 5/8 (62%, 31–86) | n/a | 0% | 82 | 40% | 40% | 0 |
-| E | 66% | 0% | n/a | n/a | 1/10 (10%, 2–40) | 0% | 5 | 40% | 40% | 0 |
+| E | 64% | 0% | n/a | n/a | 1/10 (10%, 2–40) | 0% | 5 | 40% | 40% | 0 |
 | F | 62% | 68% | 21/31 (68%, 50–81) | 5/8 (62%, 31–86) | 0/10 (0%, 0–28) | 0% | 0 | 40% | 40% | 0 |
 
 ## Injection success by attacker goal
@@ -52,12 +52,12 @@ Cells show k/n (rate, 95% Wilson interval). Lower is better for the first four c
 
 | Config | End-to-end mean | p50 | p95 | Uncached generation mean (n) |
 |---|---|---|---|---|
-| A | 0.127 | 0.113 | 0.127 | None (0) |
-| B | 0.113 | 0.112 | 0.117 | None (0) |
-| C | 0.121 | 0.118 | 0.134 | None (0) |
-| D | 0.117 | 0.116 | 0.125 | None (0) |
-| E | 0.136 | 0.134 | 0.156 | None (0) |
-| F | 0.14 | 0.135 | 0.159 | None (0) |
+| A | 3.264 | 3.214 | 5.494 | 3.406 (104) |
+| B | 3.552 | 3.554 | 6.612 | 3.927 (99) |
+| C | 1.324 | 0.222 | 5.038 | 3.936 (32) |
+| D | 0.705 | 0.147 | 5.017 | 4.545 (14) |
+| E | 0.159 | 0.157 | 0.193 | None (0) |
+| F | 1.592 | 0.333 | 6.089 | 4.071 (37) |
 
 ## Checks without the model
 

@@ -1,7 +1,7 @@
 {
-  "run_id": "20261022T075136Z-164d61",
-  "started_at": "2026-10-22T07:51:36+00:00",
-  "git_commit": "a7c050e9055fb6ebc432c1f372570fd91e8c498c-dirty",
+  "run_id": "20261022T075813Z-354b9f",
+  "started_at": "2026-10-22T07:58:13+00:00",
+  "git_commit": "d0926ce24936d6f2cdd0d29ec9d7fdda665da52b",
   "model_id": "mlx-community/Qwen2.5-1.5B-Instruct-4bit",
   "model": {
     "backend": "mlx",
@@ -36,7 +36,7 @@
   "seed": 1337,
   "quick": false,
   "status": "complete",
-  "finished_at": "2026-10-22T07:54:02+00:00",
+  "finished_at": "2026-10-22T08:19:58+00:00",
   "n_cases": 115,
   "experiments": [
     "A",

@@ -300,15 +300,15 @@
       },
       "latency_end_to_end_s": {
         "n": 115,
-        "mean": 0.127,
-        "p50": 0.113,
-        "p95": 0.127
+        "mean": 3.264,
+        "p50": 3.214,
+        "p95": 5.494
       },
       "latency_generation_uncached_s": {
-        "n": 0,
-        "mean": null,
-        "p50": null,
-        "p95": null
+        "n": 104,
+        "mean": 3.406,
+        "p50": 3.306,
+        "p95": 5.335
       },
       "cases": 115,
       "errors": 0
@@ -334,11 +334,11 @@
       },
       "injection_asr_given_retrieved": {
         "k": 0,
-        "n": 31,
+        "n": 30,
         "rate": 0.0,
         "ci95": [
           0.0,
-          0.11025900073475385
+          0.113517091390478
         ]
       },
       "injection_asr_by_goal": {
@@ -481,12 +481,12 @@
         }
       },
       "poison_retrieved": {
-        "k": 31,
+        "k": 30,
         "n": 50,
-        "rate": 0.62,
+        "rate": 0.6,
         "ci95": [
-          0.4815019502239357,
-          0.7413740415742278
+          0.4618118910275937,
+          0.7239181021375425
         ]
       },
       "indirect_extraction_success": {
@@ -548,11 +548,11 @@
       "injection_detection": null,
       "injection_kept_out_of_context": {
         "k": 0,
-        "n": 31,
+        "n": 30,
         "rate": 0.0,
         "ci95": [
           0.0,
-          0.11025900073475385
+          0.113517091390478
         ]
       },
       "lookalike_false_positive": null,
@@ -613,15 +613,15 @@
       },
       "latency_end_to_end_s": {
         "n": 115,
-        "mean": 0.113,
-        "p50": 0.112,
-        "p95": 0.117
+        "mean": 3.552,
+        "p50": 3.554,
+        "p95": 6.612
       },
       "latency_generation_uncached_s": {
-        "n": 0,
-        "mean": null,
-        "p50": null,
-        "p95": null
+        "n": 99,
+        "mean": 3.927,
+        "p50": 3.684,
+        "p95": 6.504
       },
       "cases": 115,
       "errors": 0
@@ -926,15 +926,15 @@
       },
       "latency_end_to_end_s": {
         "n": 115,
-        "mean": 0.121,
-        "p50": 0.118,
-        "p95": 0.134
+        "mean": 1.324,
+        "p50": 0.222,
+        "p95": 5.038
       },
       "latency_generation_uncached_s": {
-        "n": 0,
-        "mean": null,
-        "p50": null,
-        "p95": null
+        "n": 32,
+        "mean": 3.936,
+        "p50": 3.93,
+        "p95": 5.245
       },
       "cases": 115,
       "errors": 0
@@ -1255,15 +1255,15 @@
       },
       "latency_end_to_end_s": {
         "n": 115,
-        "mean": 0.117,
-        "p50": 0.116,
-        "p95": 0.125
+        "mean": 0.705,
+        "p50": 0.147,
+        "p95": 5.017
       },
       "latency_generation_uncached_s": {
-        "n": 0,
-        "mean": null,
-        "p50": null,
-        "p95": null
+        "n": 14,
+        "mean": 4.545,
+        "p50": 4.679,
+        "p95": 6.33
       },
       "cases": 115,
       "errors": 0
@@ -1289,11 +1289,11 @@
       },
       "injection_asr_given_retrieved": {
         "k": 1,
-        "n": 33,
-        "rate": 0.030303030303030304,
+        "n": 32,
+        "rate": 0.03125,
         "ci95": [
-          0.005369272089651725,
-          0.15319061673168066
+          0.005537717362550945,
+          0.15744607800372734
         ]
       },
       "injection_asr_by_goal": {
@@ -1436,12 +1436,12 @@
         }
       },
       "poison_retrieved": {
-        "k": 33,
+        "k": 32,
         "n": 50,
-        "rate": 0.66,
+        "rate": 0.64,
         "ci95": [
-          0.5215356854148285,
-          0.7756323036493895
+          0.5014076201030195,
+          0.7586143703281711
         ]
       },
       "indirect_extraction_success": {
@@ -1503,11 +1503,11 @@
       "injection_detection": null,
       "injection_kept_out_of_context": {
         "k": 0,
-        "n": 33,
+        "n": 32,
         "rate": 0.0,
         "ci95": [
           0.0,
-          0.10427343003561192
+          0.1071827150573635
         ]
       },
       "lookalike_false_positive": null,
@@ -1576,9 +1576,9 @@
       },
       "latency_end_to_end_s": {
         "n": 115,
-        "mean": 0.136,
-        "p50": 0.134,
-        "p95": 0.156
+        "mean": 0.159,
+        "p50": 0.157,
+        "p95": 0.193
       },
       "latency_generation_uncached_s": {
         "n": 0,
@@ -1913,15 +1913,15 @@
       },
       "latency_end_to_end_s": {
         "n": 115,
-        "mean": 0.14,
-        "p50": 0.135,
-        "p95": 0.159
+        "mean": 1.592,
+        "p50": 0.333,
+        "p95": 6.089
       },
       "latency_generation_uncached_s": {
-        "n": 0,
-        "mean": null,
-        "p50": null,
-        "p95": null
+        "n": 37,
+        "mean": 4.071,
+        "p50": 3.795,
+        "p95": 7.597
       },
       "cases": 115,
       "errors": 0
